@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  <h1>{{ heading }}</h1>
+  {{ super() }} - {{ heading }}
 {% endblock %}
 
 
-{% block content %}
-  <img src="../static/images/carson_asleep.jpg" class='mx-auto d-block' alt="Carson asleep">
+{% block app_content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ heading }}</h1>
+        
+        <img src="../static/images/carson_asleep.jpg" class='mx-auto d-block' alt="Carson asleep">
 
-  <!-- Render hobbies list being passed in using Jinja 2 syntax -->
-  <h2>Hobbies:</h2>
-  <ul>
-    {% for hobby in hobbies %}
-    <li>{{ hobby }}</li>
-    {% endfor %}
-  </ul>
-
+        <!-- Render hobbies list being passed in using Jinja 2 syntax -->
+        <h2>Hobbies:</h2>
+        <ul>
+          {% for hobby in hobbies %}
+          <li>{{ hobby }}</li>
+          {% endfor %}
+        </ul>
+      </div> <!-- ends col-md-12 -->
+    </div> <!-- ends row -->
+  </div> <!-- ends container -->
 {% endblock %}

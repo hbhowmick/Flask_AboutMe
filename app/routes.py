@@ -16,7 +16,7 @@ def index():
     return render_template('index.html', title='Home', heading=heading, hobbies=hobbies)
 
 
-
+@app.route('/about_me')
 @app.route('/about_me', methods=['GET'])
 def about_me():
     heading = 'Heather Bhowmick'
